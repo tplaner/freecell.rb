@@ -159,9 +159,9 @@ module Freecell
 
     def card_string(card)
       if card.rank < 10
-        " #{card.rank}#{card.suit.to_s[0]}"
+        " #{card.rank}#{card.suit_abbr}"
       else
-        "#{card.rank}#{card.suit.to_s[0]}"
+        "#{card.rank}#{card.suit_abbr}"
       end
     end
 

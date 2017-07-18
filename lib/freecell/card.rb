@@ -5,6 +5,8 @@ module Freecell
 
     SUITS = %i[hearts diamonds spades clubs].freeze
 
+    PRETTY = true;
+
     def initialize(rank, suit)
       @rank = rank
       @suit = suit
@@ -25,6 +27,23 @@ module Freecell
     def opposite_color?(other)
       red = %i[hearts diamonds]
       red.include?(suit) ^ red.include?(other.suit)
+    end
+
+    def suit_abbr
+      if PRETTY
+        case @suit.to_s
+        when "clubs"
+          "♣"
+        when "spades"
+          "♠"
+        when "hearts"
+          "♥"
+        when "diamonds"
+          "♦"
+        end
+      else
+        suit.to_s[0]
+      end
     end
   end
 
